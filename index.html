@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NFC GIF Trigger</title>
+  <title>MP3 Player</title>
   <style>
     body {
       margin: 0;
@@ -12,15 +12,13 @@
       background-color: black;
       overflow: hidden;
     }
-    .gif-container {
+    .mp3-container {
       text-align: center;
     }
-    img {
-      width: 400px; /* Width remains the same */
-      height: auto; /* Height adjusts proportionally */
+    audio {
       display: none;
     }
-    .gif-button {
+    .mp3-button {
       margin-top: 10px;
       padding: 10px 20px;
       background-color: #fff;
@@ -29,45 +27,113 @@
       cursor: pointer;
       width: 200px; /* Set a fixed width for all buttons */
     }
-    #aboutButton {
+    .mp3-button.active {
+      background-color: darkgreen; /* Change the background color when active */
+      color: white;
+    }
+    #shivaNiButton {
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="gif-container">
-    <img id="gif1" src="20230818 people 2.GIF" alt="GIF 1">
-    <button class="gif-button" id="playButton1">People</button>
+  <div class="mp3-container">
+    <!-- Chapters -->
+    <audio id="chapter01" src="Gita chapter01.mp3"></audio>
+    <button class="mp3-button" id="chapter01Button">Chapter 1</button>
     <br>
-    <img id="gif2" src="20200626theeye.GIF" alt="GIF 2">
-    <button class="gif-button" id="playButton2">The Eye</button>
+    <audio id="chapter02" src="Gita chapter02.mp3"></audio>
+    <button class="mp3-button" id="chapter02Button">Chapter 2</button>
     <br>
-    <img id="gif3" src="20180326unlockme1mb2.GIF" alt="GIF 3">
-    <button class="gif-button" id="playButton3">Unlock Me Infinity</button>
+    <audio id="chapter03" src="Gita chapter03.mp3"></audio>
+    <button class="mp3-button" id="chapter03Button">Chapter 3</button>
     <br>
-    <img id="gif4" src="20180326innervoice1mb2.GIF" alt="GIF 4">
-    <button class="gif-button" id="playButton4">Inner Voice</button>
+    <audio id="chapter04" src="Gita chapter04.mp3"></audio>
+    <button class="mp3-button" id="chapter04Button">Chapter 4</button>
     <br>
-    <img id="gif5" src="Infinity.GIF" alt="GIF 5">
-    <button class="gif-button" id="playButton5">Infinity</button>
+    <audio id="chapter05" src="Gita chapter05.mp3"></audio>
+    <button class="mp3-button" id="chapter05Button">Chapter 5</button>
     <br>
-    <a href="about_shivani.pdf" target="_blank">
-      <button class="gif-button" id="aboutButton">About Shivani (PDF)</button>
+    <audio id="chapter06" src="Gita chapter06.mp3"></audio>
+    <button class="mp3-button" id="chapter06Button">Chapter 6</button>
+    <br>
+    <audio id="chapter07" src="Gita chapter07.mp3"></audio>
+    <button class="mp3-button" id="chapter07Button">Chapter 7</button>
+    <br>
+    <audio id="chapter08" src="Gita chapter08.mp3"></audio>
+    <button class="mp3-button" id="chapter08Button">Chapter 8</button>
+    <br>
+    <audio id="chapter09" src="Gita chapter09.mp3"></audio>
+    <button class="mp3-button" id="chapter09Button">Chapter 9</button>
+    <br>
+    <audio id="chapter10" src="Gita chapter10.mp3"></audio>
+    <button class="mp3-button" id="chapter10Button">Chapter 10</button>
+    <br>
+    <audio id="chapter11" src="Gita chapter11.mp3"></audio>
+    <button class="mp3-button" id="chapter11Button">Chapter 11</button>
+    <br>
+    <audio id="chapter12" src="Gita chapter12.mp3"></audio>
+    <button class="mp3-button" id="chapter12Button">Chapter 12</button>
+    <br>
+    <audio id="chapter13" src="Gita chapter13.mp3"></audio>
+    <button class="mp3-button" id="chapter13Button">Chapter 13</button>
+    <br>
+    <audio id="chapter14" src="Gita chapter14.mp3"></audio>
+    <button class="mp3-button" id="chapter14Button">Chapter 14</button>
+    <br>
+    <audio id="chapter15" src="Gita chapter15.mp3"></audio>
+    <button class="mp3-button" id="chapter15Button">Chapter 15</button>
+    <br>
+    <audio id="chapter16" src="Gita chapter16.mp3"></audio>
+    <button class="mp3-button" id="chapter16Button">Chapter 16</button>
+    <br>
+    <audio id="chapter17" src="Gita chapter17.mp3"></audio>
+    <button class="mp3-button" id="chapter17Button">Chapter 17</button>
+    <br>
+    <audio id="chapter18" src="Gita chapter18.mp3"></audio>
+    <button class="mp3-button" id="chapter18Button">Chapter 18</button>
+    <br>
+    <!-- Shiva Ni -->
+    <audio id="shivaNi" src="shivaNi.mp3"></audio>
+    <button class="mp3-button" id="shivaNiButton">Shivani Mathur</button>
+    <br>
+    <!-- About Shivani (PDF) -->
+    <a href="sanskrit-verses.pdf" target="_blank">
+      <button class="mp3-button" id="aboutButton">Verse by Gita Socity(PDF)</button>
     </a>
   </div>
 
   <script>
-    const gifButtons = document.querySelectorAll('.gif-button');
-    const gifs = document.querySelectorAll('img');
+    const mp3Buttons = document.querySelectorAll('.mp3-button');
+    const audios = document.querySelectorAll('audio');
+    let activeButton = null; // To keep track of the active button
 
-    gifButtons.forEach((button, index) => {
+    mp3Buttons.forEach((button, index) => {
       button.addEventListener('click', () => {
-        if (gifs[index].style.display === 'none') {
-          gifs[index].style.display = 'block';
+        // Pause all other audio elements
+        audios.forEach((audio, audioIndex) => {
+          if (audioIndex !== index) {
+            audio.pause();
+            mp3Buttons[audioIndex].classList.remove('active'); // Remove active class from other buttons
+          }
+        });
+
+        // Toggle play/pause for the clicked audio
+        if (audios[index].paused) {
+          audios[index].play();
+          button.classList.add('active'); // Add active class to the clicked button
+          activeButton = button;
         } else {
-          gifs[index].style.display = 'none';
+          audios[index].pause();
+          button.classList.remove('active'); // Remove active class when paused
+          activeButton = null;
         }
       });
+    });
+
+    // Prevent event propagation for the last PDF button
+    document.getElementById('aboutButton').addEventListener('click', (event) => {
+      event.stopPropagation();
     });
   </script>
 </body>
