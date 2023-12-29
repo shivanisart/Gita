@@ -289,7 +289,23 @@
     </a>
   </div>
 
-  <script>
+    <!-- mahavakya -->
+    <audio id="maha" src="maha.mp3"></audio>
+    <button class="mp3-button" id="maha">Mahavakya</button>
+    <div class="audio-controls" id="mahaControls">
+      <button id="mahaPlayPause">Play</button>
+      <input type="range" id="shivaNiTimeline" min="0" value="0">
+      <span id="mahaTimeElapsed">0:00</span> / <span id="shivaNiDuration">0:00</span>
+      <button id="mahaSpeedUp">Speed Up</button>
+      <button id="mahaSpeedDown">Speed Down</button>
+    </div>
+    <br>
+
+    <!-- maha (PDF) -->
+    <a href="maha.pdf" target="_blank">
+      <button class="mp3-button" id="aboutButton">Mahavakya (PDF)</button>
+    </a>
+  </div><script>
     const mp3Buttons = document.querySelectorAll('.mp3-button');
     const audioControls = document.querySelectorAll('.audio-controls');
     const audios = document.querySelectorAll('audio');
