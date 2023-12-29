@@ -12,21 +12,25 @@
       background-color: black;
       overflow: hidden;
     }
-    .mp3-container {
-      text-align: center;
-    }
+    
+   .mp3-container {
+  text-align: center;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the container */
+} 
+
     audio {
       display: none;
     }
     .mp3-button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #fff;
-      color: black;
-      border: none;
-      cursor: pointer;
-      width: 200px;
-    }
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
     .mp3-button.active {
       background-color: darkgreen;
       color: white;
@@ -252,8 +256,7 @@
   <button id="chapter17SpeedDown">Speed Down</button>
 </div>
 <br>
-
-<!-- Chapter 18 -->
+    <!-- Chapter 18 -->
 <audio id="chapter18" src="Gita chapter18.mp3"></audio>
 <button class="mp3-button" id="chapter18Button">Chapter 18</button>
 <div class="audio-controls" id="chapter18Controls">
@@ -265,47 +268,44 @@
 </div>
 <br>
 
-
 <!-- Continue adding similar structure for chapters 8 to 18... -->
 
+<!-- Shiva Ni -->
+<audio id="shivaNi" src="shivaNi.mp3"></audio>
+<button class="mp3-button" id="shivaNiButton">Shivani Mathur</button>
+<div class="audio-controls" id="shivaNiControls">
+  <button id="shivaNiPlayPause">Play</button>
+  <input type="range" id="shivaNiTimeline" min="0" value="0">
+  <span id="shivaNiTimeElapsed">0:00</span> / <span id="shivaNiDuration">0:00</span>
+  <button id="shivaNiSpeedUp">Speed Up</button>
+  <button id="shivaNiSpeedDown">Speed Down</button>
+</div>
+<br>
 
-    <!-- Continue adding similar structure for other chapters... -->
+<!-- About Shivani (PDF) -->
+<a href="sanskrit-verses.pdf" target="_blank">
+  <button class="mp3-button" id="aboutButton">Verse by Gita Society (PDF)</button>
+</a>
 
-    <!-- Shiva Ni -->
-    <audio id="shivaNi" src="shivaNi.mp3"></audio>
-    <button class="mp3-button" id="shivaNiButton">Shivani Mathur</button>
-    <div class="audio-controls" id="shivaNiControls">
-      <button id="shivaNiPlayPause">Play</button>
-      <input type="range" id="shivaNiTimeline" min="0" value="0">
-      <span id="shivaNiTimeElapsed">0:00</span> / <span id="shivaNiDuration">0:00</span>
-      <button id="shivaNiSpeedUp">Speed Up</button>
-      <button id="shivaNiSpeedDown">Speed Down</button>
-    </div>
-    <br>
+<!-- mahavakya -->
+<audio id="maha" src="maha.mp3"></audio>
+<button class="mp3-button" id="mahaButton">Mahavakya</button>
+<div class="audio-controls" id="mahaControls">
+  <button id="mahaPlayPause">Play</button>
+  <input type="range" id="mahaTimeline" min="0" value="0">
+  <span id="mahaTimeElapsed">0:00</span> / <span id="mahaDuration">0:00</span>
+  <button id="mahaSpeedUp">Speed Up</button>
+  <button id="mahaSpeedDown">Speed Down</button>
+</div>
+<br>
 
-    <!-- About Shivani (PDF) -->
-    <a href="sanskrit-verses.pdf" target="_blank">
-      <button class="mp3-button" id="aboutButton">Verse by Gita Society (PDF)</button>
-    </a>
-  </div>
+<!-- maha (PDF) -->
+<a href="maha.pdf" target="_blank">
+  <button class="mp3-button" id="mahaPDFButton">Mahavakya (PDF)</button>
+</a>
+</div>
 
-    <!-- mahavakya -->
-    <audio id="maha" src="maha.mp3"></audio>
-    <button class="mp3-button" id="maha">Mahavakya</button>
-    <div class="audio-controls" id="mahaControls">
-      <button id="mahaPlayPause">Play</button>
-      <input type="range" id="shivaNiTimeline" min="0" value="0">
-      <span id="mahaTimeElapsed">0:00</span> / <span id="shivaNiDuration">0:00</span>
-      <button id="mahaSpeedUp">Speed Up</button>
-      <button id="mahaSpeedDown">Speed Down</button>
-    </div>
-    <br>
-
-    <!-- maha (PDF) -->
-    <a href="maha.pdf" target="_blank">
-      <button class="mp3-button" id="aboutButton">Mahavakya (PDF)</button>
-    </a>
-  </div><script>
+<script>
     const mp3Buttons = document.querySelectorAll('.mp3-button');
     const audioControls = document.querySelectorAll('.audio-controls');
     const audios = document.querySelectorAll('audio');
