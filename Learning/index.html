@@ -13,6 +13,7 @@
       overflow: hidden;
     }
     
+    
    .mp3-container {
   text-align: center;
   max-width: 600px; /* Adjust the max-width as needed */
@@ -63,17 +64,17 @@
     <br>
 
     <!-- Add similar structure for other chapters... -->
-    <!-- Chapter 02 -->
-    <audio id="chapter02 1-5" src="Gita chapter02 1-5.mp3"></audio>
-    <button class="mp3-button" id="chapter02Button">Chapter 2</button>
-    <div class="audio-controls" id="chapter02Controls">
-      <button id="chapter02PlayPause">Play</button>
-      <input type="range" id="chapter02Timeline" min="0" value="0">
-      <span id="chapter02TimeElapsed">0:00</span> / <span id="chapter02Duration">0:00</span>
-      <button id="chapter02SpeedUp">Speed Up</button>
-      <button id="chapter02SpeedDown">Speed Down</button>
-    </div>
-    <br>
+    <!-- Chapter 02 (Verses 1-5) -->
+<audio id="chapter02_1_5" src="Gita chapter02 1-5.mp3"></audio>
+<button class="mp3-button" id="chapter02_1_5Button">Chapter 2 (Part 1)</button>
+<div class="audio-controls" id="chapter02_1_5Controls">
+  <button id="chapter02_1_5PlayPause">Play</button>
+  <input type="range" id="chapter02_1_5Timeline" min="0" value="0">
+  <span id="chapter02_1_5TimeElapsed">0:00</span> / <span id="chapter02_1_5Duration">0:00</span>
+  <button id="chapter02_1_5SpeedUp">Speed Up</button>
+  <button id="chapter02_1_5SpeedDown">Speed Down</button>
+</div>
+<br>
 
     <!-- Add similar structure for other chapters... -->
  <!-- Chapter 02 (Verses 2-10) -->
@@ -330,7 +331,6 @@
         const timeline = controls.querySelector('input[type="range"]');
         const timeElapsed = controls.querySelector(`#${audio.id}TimeElapsed`);
         const durationElement = controls.querySelector(`#${audio.id}Duration`);
-        
         
 
         if (audio.paused) {
