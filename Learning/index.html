@@ -98,8 +98,6 @@
   <span id="chapter02_31_49TimeElapsed">0:00</span> / <span id="chapter02_31_49Duration">0:00</span>
   <button id="chapter02_31_49SpeedUp">Speed Up</button>
   <button id="chapter02_31_49SpeedDown">Speed Down</button>
-  <button id="chapter02_31_49Rewind">Rewind 15s</button>
-<button id="chapter02_31_49Forward">Forward 15s</button>
 </div>
 <br>
 
@@ -391,8 +389,6 @@
       const timeline = controlsElement.querySelector('input[type="range"]');
       const speedUpButton = controlsElement.querySelector('#' + audioElement.id + 'SpeedUp');
       const speedDownButton = controlsElement.querySelector('#' + audioElement.id + 'SpeedDown');
-      const rewindButton = controlsElement.querySelector('#' + audioElement.id + 'Rewind'); // Rewind button
-      const forwardButton = controlsElement.querySelector('#' + audioElement.id + 'Forward'); // Forward button
 
       playPauseButton.addEventListener('click', () => {
         if (audioElement.paused) {
@@ -416,27 +412,11 @@
       speedDownButton.addEventListener('click', () => {
         audioElement.playbackRate -= 0.1;
       });
-
-      // Rewind Button (15 seconds backward)
-      rewindButton.addEventListener('click', () => {
-        audioElement.currentTime -= 15;  // Rewind 15 seconds
-        if (audioElement.currentTime < 0) {
-          audioElement.currentTime = 0;  // Prevent going below 0
-        }
-      });
-
-      // Forward Button (15 seconds forward)
-      forwardButton.addEventListener('click', () => {
-        audioElement.currentTime += 15;  // Forward 15 seconds
-        if (audioElement.currentTime > audioElement.duration) {
-          audioElement.currentTime = audioElement.duration;  // Prevent going past the end
-        }
-      });
     }
 
     audioControls.forEach((controls, index) => {
       setupAudioControls(audios[index], controls);
     });
-</script>
+  </script>
 </body>
 </html>
