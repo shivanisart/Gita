@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MP3 Player</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+    }
+    
+    
+   .mp3-container {
+  text-align: center;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the container */
+} 
+
+    audio {
+      display: none;
+    }
+    .mp3-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+    .mp3-button.active {
+      background-color: darkgreen;
+      color: white;
+    }
+    .audio-controls {
+      display: none;
+    }
+    .audio-controls.active {
+      display: block;
+    }
+
+    /* Add this style block to set text color to white */
+    .audio-controls span {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="mp3-container">
+    <!-- Chapters -->
+    <audio id="chapter01" src="Gita chapter01.mp3"></audio>
+    <button class="mp3-button" id="chapter01Button">Chapter 1</button>
+    <div class="audio-controls" id="chapter01Controls">
+      <button id="chapter01PlayPause">Play</button>
+      <input type="range" id="chapter01Timeline" min="0" value="0">
+      <span id="chapter01TimeElapsed">0:00</span> / <span id="chapter01Duration">0:00</span>
+      <button id="chapter01SpeedUp">Speed Up</button>
+      <button id="chapter01SpeedDown">Speed Down</button>
+    </div>
+    <br>
+
+    <!-- Add similar structure for other chapters... -->
+    <!-- Chapter 02 (Verses 1-5) -->
+<audio id="chapter02_1_5" src="Gita chapter02 1-5.mp3"></audio>
+<button class="mp3-button" id="chapter02_1_5Button">Chapter 2 (Part 1)</button>
+<div class="audio-controls" id="chapter02_1_5Controls">
+  <button id="chapter02_1_5PlayPause">Play</button>
+  <input type="range" id="chapter02_1_5Timeline" min="0" value="0">
+  <span id="chapter02_1_5TimeElapsed">0:00</span> / <span id="chapter02_1_5Duration">0:00</span>
+  <button id="chapter02_1_5SpeedUp">Speed Up</button>
+  <button id="chapter02_1_5SpeedDown">Speed Down</button>
+</div>
+<br>
+
+    <!-- Add similar structure for other chapters... -->
+ <!-- Chapter 02 (Verses 2-10) -->
+<audio id="chapter02_2_10" src="Bhagavad-gita02 5-10.mp3"></audio>
+<button class="mp3-button" id="chapter02_2_10Button">Chapter 2 (Part 2)</button>
+<div class="audio-controls" id="chapter02_2_10Controls">
+  <button id="chapter02_2_10PlayPause">Play</button>
+  <input type="range" id="chapter02_2_10Timeline" min="0" value="0">
+  <span id="chapter02_2_10TimeElapsed">0:00</span> / <span id="chapter02_2_10Duration">0:00</span>
+  <button id="chapter02_2_10SpeedUp">Speed Up</button>
+  <button id="chapter02_2_10SpeedDown">Speed Down</button>
+</div>
+<br>
+
+    <!-- Chapter 2 (Part 3) -->
+<audio id="chapter02_31_49" src="Bhagavad-gita02 31-49.mp3" loop></audio>
+<button class="mp3-button" id="chapter02_31_49Button">Chapter 2 (31-49)</button>
+<div class="audio-controls" id="chapter02_31_49Controls">
+  <button id="chapter02_31_49PlayPause">Play</button>
+  <input type="range" id="chapter02_31_49Timeline" min="0" value="0">
+  <span id="chapter02_31_49TimeElapsed">0:00</span> / <span id="chapter02_31_49Duration">0:00</span>
+  <button id="chapter02_31_49SpeedUp">Speed Up</button>
+  <button id="chapter02_31_49SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 2 (Part 4) -->
+<audio id="chapter02_50_72" src="Bhagavad-gita02 50-72.mp3" loop></audio>
+<button class="mp3-button" id="chapter02_50_72Button">Chapter 2 (50-72)</button>
+<div class="audio-controls" id="chapter02_50_72Controls">
+  <button id="chapter02_50_72PlayPause">Play</button>
+  <input type="range" id="chapter02_50_72Timeline" min="0" value="0">
+  <span id="chapter02_50_72TimeElapsed">0:00</span> / <span id="chapter02_50_72Duration">0:00</span>
+  <button id="chapter02_50_72SpeedUp">Speed Up</button>
+  <button id="chapter02_50_72SpeedDown">Speed Down</button>
+</div>
+<br>
+    <!-- Chapter 03 -->
+    <audio id="chapter03" src="Gita chapter03.mp3"></audio>
+    <button class="mp3-button" id="chapter03Button">Chapter 3</button>
+    <div class="audio-controls" id="chapter03Controls">
+      <button id="chapter03PlayPause">Play</button>
+      <input type="range" id="chapter03Timeline" min="0" value="0">
+      <span id="chapter03TimeElapsed">0:00</span> / <span id="chapter03Duration">0:00</span>
+      <button id="chapter03SpeedUp">Speed Up</button>
+      <button id="chapter03SpeedDown">Speed Down</button>
+    </div>
+    <br>
+
+    <!-- Chapter 04 -->
+<audio id="chapter04" src="Gita chapter04.mp3"></audio>
+<button class="mp3-button" id="chapter04Button">Chapter 4</button>
+<div class="audio-controls" id="chapter04Controls">
+  <button id="chapter04PlayPause">Play</button>
+  <input type="range" id="chapter04Timeline" min="0" value="0">
+  <span id="chapter04TimeElapsed">0:00</span> / <span id="chapter04Duration">0:00</span>
+  <button id="chapter04SpeedUp">Speed Up</button>
+  <button id="chapter04SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 05 -->
+<audio id="chapter05" src="Gita chapter05.mp3"></audio>
+<button class="mp3-button" id="chapter05Button">Chapter 5</button>
+<div class="audio-controls" id="chapter05Controls">
+  <button id="chapter05PlayPause">Play</button>
+  <input type="range" id="chapter05Timeline" min="0" value="0">
+  <span id="chapter05TimeElapsed">0:00</span> / <span id="chapter05Duration">0:00</span>
+  <button id="chapter05SpeedUp">Speed Up</button>
+  <button id="chapter05SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Continue adding similar structure for chapters 6 to 18... -->
+
+<!-- Chapter 06 -->
+<audio id="chapter06" src="Gita chapter06.mp3"></audio>
+<button class="mp3-button" id="chapter06Button">Chapter 6</button>
+<div class="audio-controls" id="chapter06Controls">
+  <button id="chapter06PlayPause">Play</button>
+  <input type="range" id="chapter06Timeline" min="0" value="0">
+  <span id="chapter06TimeElapsed">0:00</span> / <span id="chapter06Duration">0:00</span>
+  <button id="chapter06SpeedUp">Speed Up</button>
+  <button id="chapter06SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 07 -->
+<audio id="chapter07" src="Gita chapter07.mp3"></audio>
+<button class="mp3-button" id="chapter07Button">Chapter 7</button>
+<div class="audio-controls" id="chapter07Controls">
+  <button id="chapter07PlayPause">Play</button>
+  <input type="range" id="chapter07Timeline" min="0" value="0">
+  <span id="chapter07TimeElapsed">0:00</span> / <span id="chapter07Duration">0:00</span>
+  <button id="chapter07SpeedUp">Speed Up</button>
+  <button id="chapter07SpeedDown">Speed Down</button>
+</div>
+<br>
+<!-- Chapter 08 -->
+<audio id="chapter08" src="Gita chapter08.mp3"></audio>
+<button class="mp3-button" id="chapter08Button">Chapter 8</button>
+<div class="audio-controls" id="chapter08Controls">
+  <button id="chapter08PlayPause">Play</button>
+  <input type="range" id="chapter08Timeline" min="0" value="0">
+  <span id="chapter08TimeElapsed">0:00</span> / <span id="chapter08Duration">0:00</span>
+  <button id="chapter08SpeedUp">Speed Up</button>
+  <button id="chapter08SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 09 -->
+<audio id="chapter09" src="Gita chapter09.mp3"></audio>
+<button class="mp3-button" id="chapter09Button">Chapter 9</button>
+<div class="audio-controls" id="chapter09Controls">
+  <button id="chapter09PlayPause">Play</button>
+  <input type="range" id="chapter09Timeline" min="0" value="0">
+  <span id="chapter09TimeElapsed">0:00</span> / <span id="chapter09Duration">0:00</span>
+  <button id="chapter09SpeedUp">Speed Up</button>
+  <button id="chapter09SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 10 -->
+<audio id="chapter10" src="Gita chapter10.mp3"></audio>
+<button class="mp3-button" id="chapter10Button">Chapter 10</button>
+<div class="audio-controls" id="chapter10Controls">
+  <button id="chapter10PlayPause">Play</button>
+  <input type="range" id="chapter10Timeline" min="0" value="0">
+  <span id="chapter10TimeElapsed">0:00</span> / <span id="chapter10Duration">0:00</span>
+  <button id="chapter10SpeedUp">Speed Up</button>
+  <button id="chapter10SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 11 -->
+<audio id="chapter11" src="Gita chapter11.mp3"></audio>
+<button class="mp3-button" id="chapter11Button">Chapter 11</button>
+<div class="audio-controls" id="chapter11Controls">
+  <button id="chapter11PlayPause">Play</button>
+  <input type="range" id="chapter11Timeline" min="0" value="0">
+  <span id="chapter11TimeElapsed">0:00</span> / <span id="chapter11Duration">0:00</span>
+  <button id="chapter11SpeedUp">Speed Up</button>
+  <button id="chapter11SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 12 -->
+<audio id="chapter12" src="Gita chapter12.mp3"></audio>
+<button class="mp3-button" id="chapter12Button">Chapter 12</button>
+<div class="audio-controls" id="chapter12Controls">
+  <button id="chapter12PlayPause">Play</button>
+  <input type="range" id="chapter12Timeline" min="0" value="0">
+  <span id="chapter12TimeElapsed">0:00</span> / <span id="chapter12Duration">0:00</span>
+  <button id="chapter12SpeedUp">Speed Up</button>
+  <button id="chapter12SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 13 -->
+<audio id="chapter13" src="Gita chapter13.mp3"></audio>
+<button class="mp3-button" id="chapter13Button">Chapter 13</button>
+<div class="audio-controls" id="chapter13Controls">
+  <button id="chapter13PlayPause">Play</button>
+  <input type="range" id="chapter13Timeline" min="0" value="0">
+  <span id="chapter13TimeElapsed">0:00</span> / <span id="chapter13Duration">0:00</span>
+  <button id="chapter13SpeedUp">Speed Up</button>
+  <button id="chapter13SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 14 -->
+<audio id="chapter14" src="Gita chapter14.mp3"></audio>
+<button class="mp3-button" id="chapter14Button">Chapter 14</button>
+<div class="audio-controls" id="chapter14Controls">
+  <button id="chapter14PlayPause">Play</button>
+  <input type="range" id="chapter14Timeline" min="0" value="0">
+  <span id="chapter14TimeElapsed">0:00</span> / <span id="chapter14Duration">0:00</span>
+  <button id="chapter14SpeedUp">Speed Up</button>
+  <button id="chapter14SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 15 -->
+<audio id="chapter15" src="Gita chapter15.mp3"></audio>
+<button class="mp3-button" id="chapter15Button">Chapter 15</button>
+<div class="audio-controls" id="chapter15Controls">
+  <button id="chapter15PlayPause">Play</button>
+  <input type="range" id="chapter15Timeline" min="0" value="0">
+  <span id="chapter15TimeElapsed">0:00</span> / <span id="chapter15Duration">0:00</span>
+  <button id="chapter15SpeedUp">Speed Up</button>
+  <button id="chapter15SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 16 -->
+<audio id="chapter16" src="Gita chapter16.mp3"></audio>
+<button class="mp3-button" id="chapter16Button">Chapter 16</button>
+<div class="audio-controls" id="chapter16Controls">
+  <button id="chapter16PlayPause">Play</button>
+  <input type="range" id="chapter16Timeline" min="0" value="0">
+  <span id="chapter16TimeElapsed">0:00</span> / <span id="chapter16Duration">0:00</span>
+  <button id="chapter16SpeedUp">Speed Up</button>
+  <button id="chapter16SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Chapter 17 -->
+<audio id="chapter17" src="Gita chapter17.mp3"></audio>
+<button class="mp3-button" id="chapter17Button">Chapter 17</button>
+<div class="audio-controls" id="chapter17Controls">
+  <button id="chapter17PlayPause">Play</button>
+  <input type="range" id="chapter17Timeline" min="0" value="0">
+  <span id="chapter17TimeElapsed">0:00</span> / <span id="chapter17Duration">0:00</span>
+  <button id="chapter17SpeedUp">Speed Up</button>
+  <button id="chapter17SpeedDown">Speed Down</button>
+</div>
+<br>
+    <!-- Chapter 18 -->
+<audio id="chapter18" src="Gita chapter18.mp3"></audio>
+<button class="mp3-button" id="chapter18Button">Chapter 18</button>
+<div class="audio-controls" id="chapter18Controls">
+  <button id="chapter18PlayPause">Play</button>
+  <input type="range" id="chapter18Timeline" min="0" value="0">
+  <span id="chapter18TimeElapsed">0:00</span> / <span id="chapter18Duration">0:00</span>
+  <button id="chapter18SpeedUp">Speed Up</button>
+  <button id="chapter18SpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- Continue adding similar structure for chapters 8 to 18... -->
+
+<!-- Shiva Ni -->
+<audio id="shivaNi" src="shivaNi.mp3"></audio>
+<button class="mp3-button" id="shivaNiButton">Shivani Mathur</button>
+<div class="audio-controls" id="shivaNiControls">
+  <button id="shivaNiPlayPause">Play</button>
+  <input type="range" id="shivaNiTimeline" min="0" value="0">
+  <span id="shivaNiTimeElapsed">0:00</span> / <span id="shivaNiDuration">0:00</span>
+  <button id="shivaNiSpeedUp">Speed Up</button>
+  <button id="shivaNiSpeedDown">Speed Down</button>
+</div>
+<br>
+
+<!-- About Shivani (PDF) -->
+<a href="../sanskrit-verses.pdf" target="_blank">
+  <button class="mp3-button" id="aboutButton">Verse by Gita Society (PDF)</button>
+</a>
+
+<br>
+
+<!-- maha (PDF) -->
+<a href="maha.pdf" target="_blank">
+  <button class="mp3-button" id="mahaPDFButton">Mahavakya (PDF)</button>
+</a>
+</div>
+
+<script>
+    const mp3Buttons = document.querySelectorAll('.mp3-button');
+    const audioControls = document.querySelectorAll('.audio-controls');
+    const audios = document.querySelectorAll('audio');
+    let activeButton = null; // To keep track of the active button
+
+    mp3Buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        // Pause all other audio elements
+        audios.forEach((audio, audioIndex) => {
+          if (audioIndex !== index) {
+            audio.pause();
+            audioControls[audioIndex].classList.remove('active'); // Hide controls for other audio
+            mp3Buttons[audioIndex].classList.remove('active'); // Remove active class from other buttons
+          }
+        });
+
+        // Toggle play/pause for the clicked audio
+        const audio = audios[index];
+        const controls = audioControls[index];
+        const playPauseButton = controls.querySelector('button');
+        const timeline = controls.querySelector('input[type="range"]');
+        const timeElapsed = controls.querySelector(`#${audio.id}TimeElapsed`);
+        const durationElement = controls.querySelector(`#${audio.id}Duration`);
+        
+
+        if (audio.paused) {
+          audio.play();
+          playPauseButton.textContent = 'Pause';
+          mp3Buttons[index].classList.add('active'); // Add active class to the clicked button
+          controls.classList.add('active'); // Show controls for the clicked audio
+          activeButton = button;
+        } else {
+          audio.pause();
+          playPauseButton.textContent = 'Play';
+        }
+
+        // Update the elapsed time and duration
+        audio.addEventListener('timeupdate', () => {
+          const currentTime = audio.currentTime;
+          const minutes = Math.floor(currentTime / 60);
+          const seconds = Math.floor(currentTime % 60);
+          timeElapsed.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+          const totalDuration = audio.duration;
+          const totalMinutes = Math.floor(totalDuration / 60);
+          const totalSeconds = Math.floor(totalDuration % 60);
+          durationElement.textContent = `${totalMinutes}:${totalSeconds}`;
+        });
+      });
+    });
+
+    // Add event listeners for play/pause, timeline, and speed controls for each audio
+    function setupAudioControls(audioElement, controlsElement) {
+      const playPauseButton = controlsElement.querySelector('button');
+      const timeline = controlsElement.querySelector('input[type="range"]');
+      const speedUpButton = controlsElement.querySelector('#' + audioElement.id + 'SpeedUp');
+      const speedDownButton = controlsElement.querySelector('#' + audioElement.id + 'SpeedDown');
+
+      playPauseButton.addEventListener('click', () => {
+        if (audioElement.paused) {
+          audioElement.play();
+          playPauseButton.textContent = 'Pause';
+        } else {
+          audioElement.pause();
+          playPauseButton.textContent = 'Play';
+        }
+      });
+
+      timeline.addEventListener('input', () => {
+        const currentTime = audioElement.duration * (timeline.value / 100);
+        audioElement.currentTime = currentTime;
+      });
+
+      speedUpButton.addEventListener('click', () => {
+        audioElement.playbackRate += 0.1;
+      });
+
+      speedDownButton.addEventListener('click', () => {
+        audioElement.playbackRate -= 0.1;
+      });
+    }
+
+    audioControls.forEach((controls, index) => {
+      setupAudioControls(audios[index], controls);
+    });
+  </script>
+</body>
+</html>
