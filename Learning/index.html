@@ -76,21 +76,17 @@
     <br>
 
     <!-- Add similar structure for other chapters... -->
-  
-     <!-- Chapter 022-->
-    <audio id="chapter02 2-10" src="Bhagavad-gita02 5-10.mp3"></audio>
-    <button class="mp3-button" id="chapter02Button">Chapter 2</button>
-    <div class="audio-controls" id="chapter02Controls">
-      <button id="chapter02PlayPause">Play</button>
-      <input type="range" id="chapter02Timeline" min="0" value="0">
-      <span id="chapter02TimeElapsed">0:00</span> / <span id="chapter02Duration">0:00</span>
-      <button id="chapter02SpeedUp">Speed Up</button>
-      <button id="chapter02SpeedDown">Speed Down</button>
-    </div>
-    <br>
-
-    <!-- Add similar structure for other chapters... -->
-   
+ <!-- Chapter 02 (Verses 2-10) -->
+<audio id="chapter02_2_10" src="Bhagavad-gita02 5-10.mp3"></audio>
+<button class="mp3-button" id="chapter02_2_10Button">Chapter 2 (Part 2)</button>
+<div class="audio-controls" id="chapter02_2_10Controls">
+  <button id="chapter02_2_10PlayPause">Play</button>
+  <input type="range" id="chapter02_2_10Timeline" min="0" value="0">
+  <span id="chapter02_2_10TimeElapsed">0:00</span> / <span id="chapter02_2_10Duration">0:00</span>
+  <button id="chapter02_2_10SpeedUp">Speed Up</button>
+  <button id="chapter02_2_10SpeedDown">Speed Down</button>
+</div>
+<br>
     <!-- Chapter 03 -->
     <audio id="chapter03" src="Gita chapter03.mp3"></audio>
     <button class="mp3-button" id="chapter03Button">Chapter 3</button>
@@ -332,8 +328,10 @@
         const controls = audioControls[index];
         const playPauseButton = controls.querySelector('button');
         const timeline = controls.querySelector('input[type="range"]');
-        const timeElapsed = controls.querySelector('#' + audio.id + 'TimeElapsed');
-        const durationElement = controls.querySelector('#' + audio.id + 'Duration');
+        const timeElapsed = controls.querySelector(`#${audio.id}TimeElapsed`);
+        const durationElement = controls.querySelector(`#${audio.id}Duration`);
+        
+        
 
         if (audio.paused) {
           audio.play();
